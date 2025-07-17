@@ -8,13 +8,13 @@ Route::view('/about' , 'about');
 Route::view('/contact', 'contact');
 
 Route::controller(TodoController::class)->group(function(){
-    Route::get('/' , 'index')->name('index');
-    Route::get('/create' , 'create')->name('create');
-    Route::post('/' , 'store')->name('store');
-    Route::get('/{todo}' , 'show')->name('show');
-    Route::get('/{todo}/edit' , 'edit')->name('edit');
-    Route::patch('/{todo}' , 'update')->name('update');
-    Route::delete('/{todo}' , 'destroy')->name('destroy');
+    Route::get('/' , 'index')->name('todo.index');
+    Route::get('/create' , 'create')->name('todo.create');
+    Route::post('/' , 'store')->name('todo.store');
+    Route::get('/{todo}' , 'show')->name('todo.show');
+    Route::get('/{todo}/edit' , 'edit')->name('todo.edit');
+    Route::patch('/{todo}' , 'update')->name('todo.update');
+    Route::delete('/{todo}' , 'destroy')->name('todo.destroy');
 }) ;
 
 

@@ -3,7 +3,7 @@
 
 <div class="flex justify-center items-center py-10 bg-white">
     <div class="w-full max-w-md p-6 bg-gray-100 rounded-lg shadow-md">
-        <form method="POST" action=" {{ route('store') }} ">
+        <form method="POST" action=" {{ route('todo.store') }} ">
             @csrf
         <div class="mb-4">
           <label
@@ -25,29 +25,29 @@
               Title
             </span>
           </label>
-          <x-error name="title" /> 
+          <x-error name="title" />
         </div>
-  
+
         <div class="mb-6">
           <label for="body" name="body" class="sr-only">Body</label>
           <div
             class="overflow-hidden rounded-lg border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
           >
-          
+
             <textarea
               id="body"
               name="body"
               class="w-full resize-none border-none align-top focus:ring-0 sm:text-sm px-3 py-2 "
               rows="4"
-             
+
               placeholder="learning laravel has..."
             >{{ old('body') }}</textarea>
           </div>
           <x-error name="body" />
         </div>
-  
+
         <div class="flex justify-between">
-          <a href=" {{ route('index') }} "
+          <a href=" {{ route('todo.index') }} "
             type="button"
             class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           >

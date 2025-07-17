@@ -12,7 +12,7 @@ class TodoController extends Controller
      */
     public function index(todo $todo)
     {
-        return view('index' , ['todos' => $todo::all()]) ;
+        return view('todo.index' , ['todos' => $todo::all()]) ;
     }
 
     /**
@@ -20,7 +20,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        return view('create') ;
+        return view('todo.create') ;
     }
 
     /**
@@ -37,7 +37,7 @@ class TodoController extends Controller
 
         $todo::create($attribute);
 
-        return redirect()->route('index');
+        return redirect()->route('todo.index');
 
 
 
@@ -51,15 +51,15 @@ class TodoController extends Controller
      */
     public function show(todo $todo)
     {
-        return view('show' , ['todo' => $todo]) ;
+        return view('todo.show' , ['todo' => $todo]) ;
     }
 
     /**
      * Show the form for editing the specified resource.
-     */ 
+     */
     public function edit(todo $todo)
     {
-        return view('edit', ['todo' => $todo]) ;
+        return view('todo.edit', ['todo' => $todo]) ;
     }
 
     /**
@@ -76,13 +76,13 @@ class TodoController extends Controller
             'title' => ['required'],
             'body' => ['required'],
         ]) ;
-        // sustain 
+        // sustain
 
         $todo->update($attributes) ;
 
 
         // redirect
-        return redirect()->route('show' , $todo) ;
+        return redirect()->route('todo.show' , $todo) ;
     }
 
     /**
@@ -91,6 +91,6 @@ class TodoController extends Controller
     public function destroy(todo $todo)
     {
         $todo->delete() ;
-        return redirect()->route('index') ;
+        return redirect()->route('todo.index') ;
     }
 }
